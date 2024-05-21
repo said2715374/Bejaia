@@ -3,7 +3,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.welcome}>
-        Soyez la bienvenue sur biblio-app
+      Venez visiter Bejaia 
       </div>
     </main>
   );

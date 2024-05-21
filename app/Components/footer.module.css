@@ -1,0 +1,17 @@
+/* footer.module.css */
+.footer {
+    background-color: #4CAF50;
+    padding: 20px 0;
+    color: white;
+   
+}
+
+.contactInfo {
+    display: flex; 
+    justify-content: space-between; 
+    gap: 20px; 
+}
+
+.contactInfo p {
+    margin: 0;
+}

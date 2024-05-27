@@ -1,0 +1,69 @@
+.banner {
+    position: relative;
+    height: 60vh;
+    color: white;
+    text-align: center;
+  }
+  
+  .bannerText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .about, .attractions, .activities, .gastronomy, .accommodation, .map, .testimonials, .contact {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .attractionList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .attraction {
+    flex: 1 1 calc(33.333% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  .activities ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .activities ul li {
+    margin-bottom: 10px;
+  }
+  
+  .contact form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact form label {
+    margin-bottom: 5px;
+  }
+  
+  .contact form input,
+  .contact form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .contact form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .contact form button:hover {
+    background-color: #45a049;
+  }
+  

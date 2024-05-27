@@ -14,39 +14,34 @@
     padding: 0 20px;
 }
 
-.logo img {
-    width: 150px;
-}
+
 
 .mainNav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    
 }
 
 .mainNav ul li {
     margin-left: 20px;
 }
 
-.mainNav ul li a {
+.mainNav ul li button {
     text-decoration: none;
     color: white;
     font-size: 16px;
+    background: none; /* Rendre le fond transparent */
+    border: none; /* Enlever la bordure */
+    margin: 0; /* Enlever les marges */
+    padding: 0; /* Enlever le padding */
+    cursor: pointer; /* Changer le curseur pour indiquer que c'est cliquable */
 }
 
-.mainNav ul li a:hover {
-    text-decoration: underline;
-}
 
-.ctaButton {
-    background-color: #FF5733;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
+
+
 
 .header ul {
     display: flex;
@@ -58,6 +53,6 @@
 
 }
 
-.ctaButton:hover {
-    background-color: #C70039;
-}
+
+
+

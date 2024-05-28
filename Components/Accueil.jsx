@@ -44,7 +44,7 @@ export default function Accueil() {
                         <h3>Parc National de Gouraya</h3>
                         <p>Un paradis pour les amoureux de la nature, avec des sentiers de randonnée, une faune diverse et des paysages époustouflants.</p>
                     </div>
-                    {/* Ajoutez plus d'attractions ici */}
+                   
                 </div>
             </section>
 
@@ -54,7 +54,7 @@ export default function Accueil() {
                     <li>Plongée sous-marine dans les eaux cristallines de la Méditerranée.</li>
                     <li>Randonnée dans les montagnes environnantes.</li>
                     <li>Participation aux festivals culturels locaux.</li>
-                    {/* Ajoutez plus d'activités ici */}
+                    
                 </ul>
             </section>
 
@@ -68,34 +68,17 @@ export default function Accueil() {
                 <p>Que vous cherchiez un hôtel de luxe ou une auberge conviviale, Bejaia offre une variété d'options d'hébergement pour tous les budgets.</p>
             </section>
 
-            <section className={styles.map}>
-                <h2>Carte Interactive</h2>
-                <div id="map"> {/* Intégrez une carte interactive ici */}</div>
-            </section>
+            
 
             <section className={styles.testimonials}>
                 <h2>Témoignages</h2>
                 <blockquote>
                     <p>« Bejaia est une ville incroyable avec tant de choses à voir et à faire. Les gens sont chaleureux et accueillants, et la nourriture est délicieuse. » - Sarah, touriste</p>
                 </blockquote>
-                {/* Ajoutez plus de témoignages ici */}
+               
             </section>
 
-            <section className={styles.contact}>
-                <h2>Contact et Réservations</h2>
-                <form>
-                    <label htmlFor="name">Nom:</label>
-                    <input type="text" id="name" name="name" required />
-                    
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" required />
-                    
-                    <label htmlFor="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    
-                    <button type="submit">Envoyer</button>
-                </form>
-            </section>
+           
         </>
     );
 }

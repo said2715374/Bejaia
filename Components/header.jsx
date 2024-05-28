@@ -9,6 +9,8 @@ export default function Header({ setPage }) { // Ajout de la prop setPage
                src={logo}
                alt="Logo React"
                width={80}
+               
+               
             />
             <nav className={styles.mainNav}> {/* Correction de la classe */}
                 <ul>

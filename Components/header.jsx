@@ -20,7 +20,7 @@ export default function Header({ setPage }) { // Ajout de la prop setPage
                     <li><button onClick={() => setPage('tours')}>Tours</button></li>
                 </ul>
             </nav>
-            <a href="#booking" className={styles.ctaButton}>Réservez maintenant</a>
+            
         </header>
     );
 }

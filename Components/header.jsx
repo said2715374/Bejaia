@@ -2,7 +2,7 @@ import styles from './header.module.css';
 import Image from 'next/image';
 import logo from '../public/logo.webp'
 
-export default function Header({ setPage }) { // Ajout de la prop setPage
+export default function Header({ setPage }) { 
     return (
         <header className={styles.header}>
             <Image
@@ -12,7 +12,7 @@ export default function Header({ setPage }) { // Ajout de la prop setPage
                
                
             />
-            <nav className={styles.mainNav}> {/* Correction de la classe */}
+            <nav className={styles.mainNav}> 
                 <ul>
                     <li><button onClick={() => setPage('accueil')}>Accueil</button></li>
                     <li><button onClick={() => setPage('apropos')}>A propos</button></li>

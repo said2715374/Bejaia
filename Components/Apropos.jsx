@@ -11,6 +11,7 @@ import moderne from '@/public/moderne.webp'
 export default function Apropos(){
 
     return (
+        <div>
         <>
           <section className={styles.intro}>
             <h1>À propos de Bejaia</h1>
@@ -64,5 +65,6 @@ export default function Apropos(){
             <p>Aujourd'hui, Bejaia est une ville dynamique et moderne qui continue de croître tout en préservant son riche patrimoine. Elle est un important centre économique de la région, avec un port actif et une industrie touristique en plein essor.</p>
           </section>
         </>
+        </div>
       );
 }

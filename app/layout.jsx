@@ -39,13 +39,15 @@ export default function RootLayout() {
     <html lang="en">
       <body className={inter.className + ' ' + styles.body}>
         <Header setPage={setPage} />
-        <main>
+        <main >
+          <div className={styles.main}>
           {page === 'accueil' && <Accueil />}
           {page === 'apropos' && <Apropos />}
           {page === 'contact' && <Contact />}
           {page === 'reservation' && <Reservation />}
           {page === 'service' && <Service />}
           {page === 'tours' && <Tours />}
+          </div>
         </main>
         <Footer />
       </body>

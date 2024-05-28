@@ -7,6 +7,7 @@ import gouraya from '@/public/gouraya.webp'
 export default function Accueil() {
     return (
         <>
+        <div>
             <section className={styles.banner}>
                 <Image
                     src={BejaiaVue}
@@ -78,7 +79,7 @@ export default function Accueil() {
                
             </section>
 
-           
+            </div>
         </>
     );
 }

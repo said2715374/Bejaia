@@ -1,0 +1,39 @@
+.intro, .history, .culture, .landmarks, .modernBejaia {
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .intro h1, .history h2, .culture h2, .landmarks h2, .modernBejaia h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .intro p, .history p, .culture p, .landmarks p, .modernBejaia p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+  
+  .landmarks ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .landmarks li {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .landmarks li strong {
+    font-weight: bold;
+    color: #000;
+  }
+  

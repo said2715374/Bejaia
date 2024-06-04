@@ -1,8 +1,8 @@
-/* header.module.css */
 .header {
     background-color: #4CAF50;
     padding: 20px 0;
     color: white;
+    position: relative;
 }
 
 .container {
@@ -14,14 +14,11 @@
     padding: 0 20px;
 }
 
-
-
 .mainNav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    
 }
 
 .mainNav ul li {
@@ -32,19 +29,16 @@
     text-decoration: none;
     color: white;
     font-size: 16px;
-    background: none; /* Rendre le fond transparent */
-    border: none; /* Enlever la bordure */
-    margin: 0; /* Enlever les marges */
-    padding: 0; /* Enlever le padding */
-    cursor: pointer; /* Changer le curseur pour indiquer que c'est cliquable */
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
 }
- 
-.header img {
 
+.header img {
     margin-left: 10px;
 }
-
-
 
 .header ul {
     display: flex;
@@ -53,11 +47,54 @@
     flex-wrap: wrap;
     gap: 1rem;
     list-style-type: none;
-
 }
 
+/* Styles pour le menu burger */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
 
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s;
+}
 
+@media (max-width: 768px) {
+    .mainNav {
+        display: none;
+    }
+    
+    .burger {
+        display: flex;
+    }
 
+    .mainNav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #4CAF50;
+        width: 100%;
+    }
 
+    .mainNav ul {
+        flex-direction: column;
+    }
 
+    .mainNav ul li {
+        margin: 1rem 0;
+    }
+}
+
+/* Centrer le nav lorsque l'écran est large */
+@media (min-width: 769px) {
+    .mainNav {
+        margin: 0 auto;
+    }
+}

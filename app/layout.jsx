@@ -10,9 +10,8 @@ import { useState } from 'react';
 import Accueil from "../Components/Accueil";
 import Apropos from "@/Components/Apropos";
 import Contact from "@/Components/Contact";
-import Reservation from "@/Components/Reservation";
-import Service from "@/Components/Service";
-import Tours from "@/Components/Tours";
+import Inscription from "@/Components/inscription";
+import Connexion from "@/Components/Connexion";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +26,10 @@ export default function RootLayout() {
     contenu = <Apropos />;
   } else if (page === 'contact') {
     contenu = <Contact />;
-  } else if (page === 'reservation') {
-    contenu = <Reservation />;
-  } else if (page === 'service') {
-    contenu = <Service />;
-  } else if (page === 'tours') {
-    contenu = <Tours />;
+  } else if (page === 'inscription') {
+    contenu = <Inscription/>;
+  } else if (page === 'connexion') {
+    contenu = <Connexion/>;
   }
 
   return (
@@ -44,9 +41,8 @@ export default function RootLayout() {
           {page === 'accueil' && <Accueil />}
           {page === 'apropos' && <Apropos />}
           {page === 'contact' && <Contact />}
-          {page === 'reservation' && <Reservation />}
-          {page === 'service' && <Service />}
-          {page === 'tours' && <Tours />}
+          {page === 'inscription' && <Inscription/>}
+          {page === 'Connexion' && <Connexion/>}
           </div>
         </main>
         <Footer />

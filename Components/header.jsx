@@ -28,9 +28,8 @@ export default function Header({ setPage }) {
                         <li><button onClick={() => { setPage('accueil'); toggleMenu(); }}>Accueil</button></li>
                         <li><button onClick={() => { setPage('apropos'); toggleMenu(); }}>A propos</button></li>
                         <li><button onClick={() => { setPage('contact'); toggleMenu(); }}>Contact</button></li>
-                        <li><button onClick={() => { setPage('reservation'); toggleMenu(); }}>Reservation</button></li>
-                        <li><button onClick={() => { setPage('service'); toggleMenu(); }}>Service</button></li>
-                        <li><button onClick={() => { setPage('tours'); toggleMenu(); }}>Tours</button></li>
+                        <li><button onClick={() => { setPage('inscription'); toggleMenu(); }}>inscription</button></li>
+                        <li><button onClick={() => { setPage('Connexion'); toggleMenu(); }}>Connexion</button></li>
                     </ul>
                 </nav>
             </div>

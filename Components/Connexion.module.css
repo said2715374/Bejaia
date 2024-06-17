@@ -1,0 +1,79 @@
+/* Connexion.module.css */
+
+/* Conteneur principal de la connexion */
+.connexionContainer {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Formulaire */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Groupes de champs de formulaire */
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Étiquette */
+  .label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Champ de saisie */
+  .formGroup input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    outline: none;
+  }
+  
+  /* Message d'erreur */
+  .error {
+    color: #ff4d4d;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Bouton de soumission */
+  .submitButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+  }
+  
+  .submitButton:hover {
+    background-color: #45a049;
+  }
+  
+  .submitButton:active {
+    transform: scale(0.98);
+  }
+  

@@ -1,10 +1,31 @@
-
-
-
+import { useForm } from 'react-hook-form';
 import styles from './Contact.module.css';
-import Image from 'next/image';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = async (data) => {
+const { name, email, message } = data;
+    const templateParams = {
+      
+      
+      to_name: 'said',  
+      name,
+      email,
+      message
+    };
+
+    // Traitement des données du formulaire
+    emailjs.send('service_im2v2jb', 'template_ryat23l', data, 'nfj3jpXRw96j6yfo9')
+    .then((result) => {
+      console.log(result.text);
+      alert('Votre message a été envoyé avec succès!');
+    } ,(error) => {
+      console.log(error.text);
+      alert('Une erreur s\'est produite. Veuillez réessayer.', error);
+  });
+  }
   return (
     <div className={styles.contactContainer}>
       <h1>Contactez-nous</h1>
@@ -18,18 +39,42 @@ export default function Contact() {
 
       <div className={styles.contactForm}>
         <h2>Envoyez-nous un message</h2>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.formGroup}>
             <label htmlFor="name">Nom:</label>
-            <input type="text" id="name" name="name" required />
+            <input
+              type="text"
+              id="name"
+              placeholder='Entrez votre nom'
+              {...register('name', { required: 'Nom requis' })}
+            />
+            {errors.name && <p className={styles.error}>{errors.name.message}</p>}
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              {...register('email', {
+                required: 'Email requis',
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: 'Format email invalide'
+                }
+              })}
+              placeholder='Entrez votre email'
+            />
+            {errors.email && <p className={styles.error}>{errors.email.message}</p>}
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea
+              id="message"
+              {...register('message', { required: 'Message requis' })}
+              rows="5"
+              placeholder='Entrez votre message'
+            ></textarea>
+            {errors.message && <p className={styles.error}>{errors.message.message}</p>}
           </div>
           <button type="submit" className={styles.submitButton}>Envoyer</button>
         </form>

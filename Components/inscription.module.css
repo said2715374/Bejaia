@@ -1,0 +1,79 @@
+/* Inscription.module.css */
+
+/* Conteneur principal de l'inscription */
+.inscriptionContainer {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Formulaire */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Groupes de champs de formulaire */
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Étiquette */
+.label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Champ de saisie */
+.formGroup input {
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    outline: none;
+}
+
+/* Message d'erreur */
+.error {
+    color: #ff4d4d;
+    font-size: 16px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+/* Bouton de soumission */
+.submitButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 18px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.submitButton:hover {
+    background-color: #45a049;
+}
+
+.submitButton:active {
+    transform: scale(0.98);
+}

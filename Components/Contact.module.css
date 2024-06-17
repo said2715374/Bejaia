@@ -66,4 +66,13 @@
     border: none;
     border-radius: 8px;
   }
+
+  .error{
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid red;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 5px;
+  }
   

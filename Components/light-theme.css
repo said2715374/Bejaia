@@ -1,0 +1,9 @@
+:root {
+    --background-color: #45a049;
+    --text-color: white;
+    --button-background-color: #ffd700;
+    --button-text-color: white;
+    --header-background-color: #45a049;
+    --nav-background-color: #45a049;
+    /* Ajoutez plus de variables si nécessaire */
+}

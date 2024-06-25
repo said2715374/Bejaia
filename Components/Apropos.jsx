@@ -11,7 +11,7 @@ import moderne from '@/public/moderne.webp'
 export default function Apropos(){
 
     return (
-        <div>
+        <div className={styles.Apropos}>
         <>
           <section className={styles.intro}>
             <h1>À propos de Bejaia</h1>

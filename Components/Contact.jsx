@@ -1,31 +1,32 @@
 import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from './Contact.module.css';
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const onSubmit = async (data) => {
-const { name, email, message } = data;
+    const { name, email, message } = data;
     const templateParams = {
-      
-      
-      to_name: 'said',  
+      to_name: 'said',
       name,
       email,
       message
     };
 
-    // Traitement des données du formulaire
-    emailjs.send('service_im2v2jb', 'template_ryat23l', data, 'nfj3jpXRw96j6yfo9')
-    .then((result) => {
-      console.log(result.text);
-      alert('Votre message a été envoyé avec succès!');
-    } ,(error) => {
-      console.log(error.text);
-      alert('Une erreur s\'est produite. Veuillez réessayer.', error);
-  });
-  }
+    try {
+      // Envoi de l'email avec EmailJS
+      await emailjs.send('service_im2v2jb', 'template_ryat23l', templateParams, 'nfj3jpXRw96j6yfo9');
+      toast.success('Votre message a été envoyé avec succès!');
+      reset(); // Réinitialise le formulaire après envoi réussi
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi du message :', error);
+      toast.error('Une erreur s\'est produite. Veuillez réessayer.');
+    }
+  };
+
   return (
     <div className={styles.contactContainer}>
       <h1>Contactez-nous</h1>
@@ -90,6 +91,8 @@ const { name, email, message } = data;
           loading="lazy"
         ></iframe>
       </div>
+
+      <ToastContainer /> {/* Container pour les notifications Toastify */}
     </div>
   );
 }

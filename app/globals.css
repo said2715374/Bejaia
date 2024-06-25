@@ -105,3 +105,23 @@ a {
     color-scheme: dark;
   }
 }
+
+/* globals.css */
+body.light {
+    --background-color: #45a049;
+    --text-color: white;
+    --button-background-color: #ffd700;
+    --button-text-color: white;
+    --header-background-color: #45a049;
+    --nav-background-color: #45a049;
+  }
+
+body.dark {
+  --background-color: #1e1e1e;
+  --text-color: #ffffff;
+  --button-background-color: #333333;
+  --button-text-color: #ffd700;
+  --header-background-color: #2a2a2a;
+  --nav-background-color: #333333;
+}
+

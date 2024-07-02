@@ -1,5 +1,5 @@
-// Connexion.js
-
+import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useState } from 'react';
 import styles from './Connexion.module.css';
 
@@ -59,6 +59,12 @@ export default function Connexion() {
 
   return (
     <div className={styles.connexionContainer}>
+      <Helmet>
+        <title>Connexion - Veuillez vous connecter pour accéder à votre compte</title>
+        <meta name="description" content="Page de connexion pour accéder à votre compte utilisateur." />
+        {/* Ajoutez d'autres métadonnées au besoin */}
+      </Helmet>
+
       <h2>Connexion</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>

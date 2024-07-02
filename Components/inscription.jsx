@@ -1,3 +1,5 @@
+// Inscription.js
+
 import { useState } from 'react';
 import styles from './inscription.module.css';
 
@@ -92,51 +94,58 @@ export default function Inscription() {
   };
 
   return (
-    <div className={styles.inscriptionContainer}>
-      <h1>Inscription</h1>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.formGroup}>
-          <label htmlFor="username">Nom d'utilisateur</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={handleUsernameChange}
-          />
-          {errors.username && <div className={styles.error}>{errors.username}</div>}
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-          {errors.email && <div className={styles.error}>{errors.email}</div>}
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="password">Mot de passe</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-          {errors.password && <div className={styles.error}>{errors.password}</div>}
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="confirmPassword">Confirmer le mot de passe</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={handleConfirmPasswordChange}
-          />
-          {errors.confirmPassword && <div className={styles.error}>{errors.confirmPassword}</div>}
-        </div>
-        <button type="submit" className={styles.submitButton}>S'inscrire</button>
-      </form>
-    </div>
+    <>
+      <head>
+        <title>Inscription - Votre Application</title>
+        <meta name="description" content="Inscrivez-vous pour accéder à notre plateforme." />
+        {/* Autres métadonnées comme les balises meta keywords, etc., si nécessaires */}
+      </head>
+      <div className={styles.inscriptionContainer}>
+        <h1>Inscription</h1>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.formGroup}>
+            <label htmlFor="username">Nom d'utilisateur</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={handleUsernameChange}
+            />
+            {errors.username && <div className={styles.error}>{errors.username}</div>}
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+            {errors.email && <div className={styles.error}>{errors.email}</div>}
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="password">Mot de passe</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+            {errors.password && <div className={styles.error}>{errors.password}</div>}
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="confirmPassword">Confirmer le mot de passe</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
+            />
+            {errors.confirmPassword && <div className={styles.error}>{errors.confirmPassword}</div>}
+          </div>
+          <button type="submit" className={styles.submitButton}>S'inscrire</button>
+        </form>
+      </div>
+    </>
   );
 }

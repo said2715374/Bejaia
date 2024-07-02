@@ -1,20 +1,26 @@
-import styles from './Accueil.module.css';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 import Image from 'next/image';
-import BejaiaVue from '@/public/BejaiaVue.webp'
-import capCarbon from '@/public/capCarbon.webp'
-import gouraya from '@/public/gouraya.webp'
+import styles from './Accueil.module.css';
+import BejaiaVue from '@/public/BejaiaVue.webp';
+import capCarbon from '@/public/capCarbon.webp';
+import gouraya from '@/public/gouraya.webp';
 
 export default function Accueil() {
     return (
-        <>
         <div>
+            <Helmet>
+                <title>Bienvenue à Bejaia - Découvrez la perle de la Méditerranée</title>
+                <meta name="description" content="Découvrez Bejaia, une ville côtière célèbre pour ses paysages magnifiques, son riche patrimoine historique et sa culture vibrante." />
+                {/* Ajoutez d'autres métadonnées au besoin */}
+            </Helmet>
+
             <section className={styles.banner}>
                 <Image
                     src={BejaiaVue}
                     alt="BejaiaVue"
                     layout="fill"
                     objectFit="cover"
-                   
                 />
                 <div className={styles.bannerText}>
                     <h1>Bienvenue à Bejaia</h1>
@@ -31,21 +37,20 @@ export default function Accueil() {
                 <h2>Principales Attractions Touristiques</h2>
                 <div className={styles.attractionList}>
                     <div className={styles.attraction}>
-                        <Image 
-                         src={capCarbon}
-                         alt="capCarbon"
-                         height={200}
-                         width={300}
+                        <Image
+                            src={capCarbon}
+                            alt="capCarbon"
+                            height={200}
+                            width={300}
                         />
                         <h3>Cap Carbon</h3>
                         <p>Un lieu spectaculaire offrant des vues panoramiques sur la mer Méditerranée et des falaises impressionnantes.</p>
                     </div>
                     <div className={styles.attraction}>
-                        <Image src={gouraya} alt="gouraya"  height={200} />
+                        <Image src={gouraya} alt="gouraya" height={200} width={300} />
                         <h3>Parc National de Gouraya</h3>
                         <p>Un paradis pour les amoureux de la nature, avec des sentiers de randonnée, une faune diverse et des paysages époustouflants.</p>
                     </div>
-                   
                 </div>
             </section>
 
@@ -55,7 +60,6 @@ export default function Accueil() {
                     <li>Plongée sous-marine dans les eaux cristallines de la Méditerranée.</li>
                     <li>Randonnée dans les montagnes environnantes.</li>
                     <li>Participation aux festivals culturels locaux.</li>
-                    
                 </ul>
             </section>
 
@@ -69,17 +73,12 @@ export default function Accueil() {
                 <p>Que vous cherchiez un hôtel de luxe ou une auberge conviviale, Bejaia offre une variété d'options d'hébergement pour tous les budgets.</p>
             </section>
 
-            
-
             <section className={styles.testimonials}>
                 <h2>Témoignages</h2>
                 <blockquote>
                     <p>« Bejaia est une ville incroyable avec tant de choses à voir et à faire. Les gens sont chaleureux et accueillants, et la nourriture est délicieuse. » - Sarah, touriste</p>
                 </blockquote>
-               
             </section>
-
-            </div>
-        </>
+        </div>
     );
 }

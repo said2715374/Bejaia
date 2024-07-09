@@ -12,13 +12,13 @@
         <changefreq>never</changefreq>
         <priority>0.7</priority>
     </url>
-     <url>
+    <url>
         <loc>https://locallhost:3000/contact</loc>
         <lastmod>2024-05-08</lastmod>
         <changefreq>never</changefreq>
         <priority>0.7</priority>
     </url>
-     <url>
+    <url>
         <loc>https://locallhost:3000/documents</loc>
         <lastmod>2024-05-08</lastmod>
         <changefreq>never</changefreq>

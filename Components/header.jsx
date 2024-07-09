@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Cookies from 'js-cookie';
 import logo from '../public/logo.webp';
 
-// Définition des textes constants pour les boutons
 const TEXT_FR = {
     toggleTheme: 'Thème',
     toggleLanguage: 'Français',
@@ -31,22 +30,24 @@ export default function Header({ setPage }) {
         const storedLanguage = Cookies.get('language');
         return storedLanguage || 'fr';
     });
-    const [theme, setTheme] = useState(() => {
-        const storedTheme = Cookies.get('theme');
-        return storedTheme || 'light';
-    });
-
     
+    // Utilisation d'une valeur fixe pour l'initialisation de 'theme'
+    const [theme, setTheme] = useState('light');
 
     useEffect(() => {
+        // Récupération du thème depuis les cookies au montage du composant
+        const storedTheme = Cookies.get('theme');
+        if (storedTheme) {
+            setTheme(storedTheme);
+        }
+    }, []);
+
+    useEffect(() => {
+        // Mise à jour du cookie de thème lorsque 'theme' change
         Cookies.set('theme', theme, { expires: 365 });
         document.body.classList.remove('light', 'dark');
         document.body.classList.add(theme);
     }, [theme]);
-
-    useEffect(() => {
-        Cookies.set('language', language, { expires: 365 });
-    }, [language]);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -57,11 +58,14 @@ export default function Header({ setPage }) {
     };
 
     const toggleTheme = () => {
+        // Inversion du thème actuel
         setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
     };
 
-    // Utilisation des constantes pour le texte des boutons
+    // Sélection des labels de langue en fonction de 'language'
     const labels = language === 'fr' ? TEXT_FR : TEXT_EN;
+
+    // Texte du bouton de thème basé sur 'theme'
     const themeToggleText = theme === 'light' ? '🌙 Sombre' : '☀️ Clair';
 
     return (
@@ -83,8 +87,6 @@ export default function Header({ setPage }) {
                 >
                     {labels.toggleLanguage}
                 </button>
-
-                {/* Utilisation de la constante pour afficher le texte du bouton de thème */}
                 <button
                     className={styles.themeToggle}
                     onClick={toggleTheme}

@@ -1,24 +1,66 @@
+'use client'
+import { useState, useEffect } from 'react';
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import Image from 'next/image';
+import Titre from './Title';
 import styles from './Accueil.module.css';
 import BejaiaVue from '@/public/BejaiaVue.webp';
 import capCarbon from '@/public/capCarbon.webp';
 import gouraya from '@/public/gouraya.webp';
 
+export const metadata = {
+    title: 'Accueil | BEJAIA',
+    description: 'Les résultats de recherche peuvent inclure des attributs "meta description" pour résumer de manière concise le contenu de la page. [En savoir plus sur la meta description](lien-vers-votre-ressource).',
+    openGraph: {
+        title: 'Accueil | BEJAIA',
+        description: 'Les résultats de recherche peuvent inclure des attributs "meta description" pour résumer de manière concise le contenu de la page. [En savoir plus sur la meta description](lien-vers-votre-ressource).',
+        url: 'http://localhost:3000',
+        type: 'website',
+        images: [
+            {
+                url: '/BejaiaVue.webp',
+                width: 800,
+                height: 600,
+                alt: 'Vue aérienne de Bejaia',
+            },
+        ],
+    },
+};
+
+
 export default function Accueil() {
+    const [theme, setTheme] = useState('light'); // état du thème par défaut
+    const [langue, setLangue] = useState('fr'); // état de la langue par défaut
+
+    useEffect(() => {
+        // Fonction pour récupérer les valeurs des cookies
+        const getCookie = (name) => {
+            const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+            return cookieValue ? cookieValue.pop() : '';
+        };
+
+        // Récupérer les valeurs des cookies pour le thème et la langue
+        const savedTheme = getCookie('theme');
+        const savedLangue = getCookie('langue');
+
+        // Mettre à jour l'état avec les valeurs des cookies s'ils existent
+        if (savedTheme) {
+            setTheme(savedTheme);
+        }
+        if (savedLangue) {
+            setLangue(savedLangue);
+        }
+    }, []);
     return (
         <div>
-            <Helmet>
-                <title>Bienvenue à Bejaia - Découvrez la perle de la Méditerranée</title>
-                <meta name="description" content="Découvrez Bejaia, une ville côtière célèbre pour ses paysages magnifiques, son riche patrimoine historique et sa culture vibrante." />
-                {/* Ajoutez d'autres métadonnées au besoin */}
-            </Helmet>
+            <Titre/>
+            <meta name="description" content={metadata.description} />
 
             <section className={styles.banner}>
                 <Image
                     src={BejaiaVue}
                     alt="BejaiaVue"
+                   
                     layout="fill"
                     objectFit="cover"
                 />
@@ -40,8 +82,8 @@ export default function Accueil() {
                         <Image
                             src={capCarbon}
                             alt="capCarbon"
-                            height={200}
-                            width={300}
+                            height={384}
+                            width={384}
                         />
                         <h3>Cap Carbon</h3>
                         <p>Un lieu spectaculaire offrant des vues panoramiques sur la mer Méditerranée et des falaises impressionnantes.</p>
